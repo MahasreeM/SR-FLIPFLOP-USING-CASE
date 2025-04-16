@@ -1,3 +1,5 @@
+# REG.NO: 212224110035
+# NAME: MAHA SHREE.M
 # SR-FLIPFLOP-USING-CASE
 
 **AIM:**
@@ -39,10 +41,35 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 **PROGRAM**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+```
+module exp6 (s, r, clk, rst, q);
+  input s, r, clk, rst;
+  output reg q;
+
+  always @(posedge clk or posedge rst)
+begin
+    if (rst)
+    q <= 0; // Reset the flip-flop
+    else
+begin
+      case ({s, r}) // S and R control the behavior
+        2'b00: q <= q; // No change
+        2'b01: q <= 0; // Reset
+        2'b10: q <= 1; // Set
+        2'b11: q <= 0; // Invalid state, typically treated as reset
+      endcase
+     end
+  end
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![Screenshot (204)](https://github.com/user-attachments/assets/39954722-4224-4cae-a20e-d270ddc9d57d)
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
+
+![Screenshot (205)](https://github.com/user-attachments/assets/7641d4a3-9985-464c-be54-62abd44737e8)
+
 
 **RESULTS**
