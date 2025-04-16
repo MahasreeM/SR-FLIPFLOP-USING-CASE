@@ -73,3 +73,4 @@ endmodule
 
 
 **RESULTS**
+Thus the implemented SR flip-flop was successfully verified.
